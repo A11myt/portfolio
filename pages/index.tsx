@@ -1,26 +1,25 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { Language } from "@/src/types/Types";
 import Owner from "./Owner";
 import About from "./About";
 import Experience from "./Experience";
 import Projects from "./Projects";
-import { applyMouseGlow } from "@/src/utils/MouseGlow";
+import  applyMouseGlow from "@/src/utils/MouseGlow";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLanguage } from "@fortawesome/free-solid-svg-icons";
+import { Language } from "@/src/types/Types";
 
 export default function Home() {
   applyMouseGlow("hover-container");
-  // const [language, setLanguage] = useState<Language>("de");
   const [locationHash, setLocationHash] = useState("");
 
   const router = useRouter();
   const { lang } = router.query;
-  const [language, setLanguage] = useState<string>('de');
+  const [language, setLanguage] = useState<Language>('de');
 
   useEffect(() => {
     if (lang) {
-      setLanguage(lang as string);
+      setLanguage(lang as Language);
     }
   }, [lang]);
   useEffect(() => {

@@ -1,6 +1,5 @@
-import { useEffect } from 'react';
-
-export const applyMouseGlow = (containerId: string) => {
+import { useEffect } from "react";
+const useMouseGlow = (containerId: string) => {
   useEffect(() => {
     const container = document.getElementById(containerId);
     if (!container) return;
@@ -25,3 +24,6 @@ export const applyMouseGlow = (containerId: string) => {
     };
   }, [containerId]);
 };
+
+export default useMouseGlow;
+;

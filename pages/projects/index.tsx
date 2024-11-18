@@ -3,7 +3,7 @@ import { GithubProject } from "@/src/types/Types";
 import { useState, useEffect, useMemo } from "react";
 import data from "../../data/Projects.json";
 import Link from "next/link";
-import { applyMouseGlow } from "@/src/utils/MouseGlow";
+import  applyMouseGlow  from "@/src/utils/MouseGlow";
 import { DateConverter } from "@/src/utils/DateConverter";
 import {
   faArrowLeft,
@@ -11,6 +11,7 @@ import {
   faArrowDownWideShort,
   faArrowUpWideShort,
 } from "@fortawesome/free-solid-svg-icons";
+import { Language } from "@/src/types/Types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Index() {
@@ -20,7 +21,7 @@ export default function Index() {
   const labels = language == "de" ? labelStore.de : labelStore.en;
   useEffect(() => {
     if (lang) {
-      setLanguage(lang as string);
+      setLanguage(lang as Language);
     }
   }, [lang]);
 

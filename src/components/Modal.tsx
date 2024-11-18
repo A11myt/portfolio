@@ -33,8 +33,8 @@ export default function Modal(props: {
             <p>{props.job.Description[props.lang]}</p>
             <div className="flex pt-3 gap-3 lg:gap-0 w-full flex-col-reverse lg:flex-row justify-between items-start lg:items-end">
               <div className="flex gap-2 flex-wrap ">
-                {props.job.Stack.map((tech) => (
-                  <p className="flex  rounded-full px-2 py-0.5 border bg-[#363b45]/50 border-blue-600/50">
+                {props.job.Stack.map((tech, index) => (
+                  <p key={index} className="flex  rounded-full px-2 py-0.5 border bg-[#363b45]/50 border-blue-600/50">
                     {tech}
                   </p>
                 ))}

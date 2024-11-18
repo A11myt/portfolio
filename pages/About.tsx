@@ -36,7 +36,7 @@ function En() {
     <div className="flex flex-col gap-4 py-2 lg:py-0">
       <p>
         In 2016, I started programming through a basic HTML course and quickly
-        moved on to JavaScript and web development. Today, I'm excited to
+        moved on to JavaScript and web development. Today, I&apos;m excited to
         continue where I began back then – but now with modern technologies like
         TypeScript, Tailwind, and C#.
       </p>

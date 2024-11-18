@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { ProjectCard } from "@/src/components/Card";
 import Link from "next/link";
-import data from "../data/Projects.json";
+import data from "@/data/Projects.json";
 import { GithubProject, Language } from "@/src/types/Types";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

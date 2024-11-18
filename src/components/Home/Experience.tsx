@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { JobCard } from "@/src/components/Card";
-import data from "../data/Experience.json";
+import data from "@/data/Experience.json";
 import { Job, Language } from "@/src/types/Types";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

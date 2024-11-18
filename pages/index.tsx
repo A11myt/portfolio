@@ -1,21 +1,21 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import Owner from "./Owner";
-import About from "./About";
-import Experience from "./Experience";
-import Projects from "./projects";
-import  applyMouseGlow from "@/src/utils/MouseGlow";
+import Owner from "@/src/components/Home/Owner";
+import About from "@/src/components/Home/About";
+import Experience from "@/src/components/Home/Experience";
+import Projects from "@/src/components/Home/Projects";
+import applyMouseGlow from "@/src/utils/MouseGlow";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLanguage } from "@fortawesome/free-solid-svg-icons";
 import { Language } from "@/src/types/Types";
 
 export default function Home() {
   applyMouseGlow("hover-container");
-  const [locationHash, setLocationHash] = useState("");
+  const [locationHash, setLocationHash] = useState("#about");
 
   const router = useRouter();
   const { lang } = router.query;
-  const [language, setLanguage] = useState<Language>('de');
+  const [language, setLanguage] = useState<Language>("de");
 
   useEffect(() => {
     if (lang) {
@@ -42,7 +42,7 @@ export default function Home() {
       element.scrollIntoView({ behavior: "smooth" });
       setTimeout(() => {
         window.history.replaceState(null, hash);
-      }, 300); 
+      }, 300);
     }
   };
 
@@ -59,7 +59,7 @@ export default function Home() {
           }
         });
       },
-      { threshold: 0.5 }, 
+      { threshold: 0.5 },
     );
 
     const sections = document.querySelectorAll("section");
@@ -77,7 +77,11 @@ export default function Home() {
       <div className="" id="hover-container">
         <main className="mx-auto h-full w-full min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0 text-[#e1e4eb]">
           <div className="lg:flex h-full lg:justify-between lg:gap-4">
-            <Owner location={locationHash} handleItemClick={handleItemClick} language={language} />
+            <Owner
+              location={locationHash}
+              handleItemClick={handleItemClick}
+              language={language}
+            />
             <div className="flex flex-col h-full w-full gap-y-4">
               <section className=" lg:pb-20 lg:py-24" id="about" title="About">
                 <About lang={language} />
@@ -88,11 +92,20 @@ export default function Home() {
               <section id="projects" title="Projects">
                 <Projects lang={language} />
               </section>
-              <div className="pb-4 xl:pb-24">Footer</div>
+              <div className="pb-4 xl:pb-24">
+                <p>
+                  &copy; {new Date().getFullYear()} Jason Johnson. All Rights
+                  Reserved.
+                </p>
+              </div>
             </div>
           </div>
           <div className="z-10 fixed right-4 top-4 cursor-pointer">
-            <FontAwesomeIcon icon={faLanguage} className=" h-10" onClick={()=> toggleLanguage()} />
+            <FontAwesomeIcon
+              icon={faLanguage}
+              className=" h-10"
+              onClick={() => toggleLanguage()}
+            />
           </div>
         </main>
       </div>

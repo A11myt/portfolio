@@ -22,7 +22,7 @@ export default function Owner(props: {
   return (
     <div className="lg:sticky pt-8 md:pt-0 lg:top-0 lg:flex lg:max-h-screen lg:w-full lg:flex-col lg:justify-between lg:py-24">
       <div className="flex flex-col gap-2 pb-4 lg:pb-0">
-        <h1 className="text-6xl font-black leading-4 mb-4">Jason Johnson</h1>
+        <h1 className="text-5xl md:text-6xl font-black md:leading-4 mb-4">Jason Johnson</h1>
         <h2 className="font-extrabold">Full Stack Developer</h2>
         <p className="pt-1 text-[#444955] text-sm font-bold">
           {" "}
@@ -30,9 +30,13 @@ export default function Owner(props: {
         </p>
       </div>
       <div className="visible lg:hidden h-auto w-full z-10 fixed left-0 top-0  ">
-          <div className="p-5 font-bold backdrop-blur">
-            {windowLocation == "#about" ? labels[0] : windowLocation == "#experience" ? labels[1] : labels[2]}
-          </div>
+        <div className="p-5 font-bold backdrop-blur">
+          {windowLocation == "#about"
+            ? labels[0]
+            : windowLocation == "#experience"
+              ? labels[1]
+              : windowLocation == "#projects" ?  labels[2] : ""}
+        </div>
       </div>
       <ul className="hidden lg:visible lg:pb-10 lg:gap-y-4 lg:flex lg:flex-col">
         <li

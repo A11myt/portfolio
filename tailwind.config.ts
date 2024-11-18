@@ -7,6 +7,7 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./public/images/**/*.{jpg,jpeg,png,svg,gif}",
     "./public/documents/**/*.{pdf,doc,docx}",
+    "./data/**/*.{json,md}",
   ],
   theme: {
     extend: {

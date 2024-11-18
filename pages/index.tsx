@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Owner from "./Owner";
 import About from "./About";
 import Experience from "./Experience";
-import Projects from "./Projects";
+import Projects from "./projects";
 import  applyMouseGlow from "@/src/utils/MouseGlow";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLanguage } from "@fortawesome/free-solid-svg-icons";

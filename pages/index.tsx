@@ -1,0 +1,102 @@
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { Language } from "@/src/types/Types";
+import Owner from "./Owner";
+import About from "./About";
+import Experience from "./Experience";
+import Projects from "./Projects";
+import { applyMouseGlow } from "@/src/utils/MouseGlow";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLanguage } from "@fortawesome/free-solid-svg-icons";
+
+export default function Home() {
+  applyMouseGlow("hover-container");
+  // const [language, setLanguage] = useState<Language>("de");
+  const [locationHash, setLocationHash] = useState("");
+
+  const router = useRouter();
+  const { lang } = router.query;
+  const [language, setLanguage] = useState<string>('de');
+
+  useEffect(() => {
+    if (lang) {
+      setLanguage(lang as string);
+    }
+  }, [lang]);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const hash = window.location.hash;
+      setLocationHash(hash);
+      if (hash) {
+        const element = document.getElementById(hash.replace("#", ""));
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    }
+  }, []);
+
+  const handleItemClick = (hash: string) => {
+    setLocationHash(hash);
+    const element = document.getElementById(hash.replace("#", ""));
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      setTimeout(() => {
+        window.history.replaceState(null, hash);
+      }, 300); 
+    }
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute("id");
+            if (id && `#${id}` !== window.location.hash) {
+              window.history.replaceState(null, `#${id}`);
+              setLocationHash(`#${id}`);
+            }
+          }
+        });
+      },
+      { threshold: 0.5 }, 
+    );
+
+    const sections = document.querySelectorAll("section");
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
+  const toggleLanguage = () => {
+    setLanguage(language === "de" ? "en" : "de");
+  };
+
+  return (
+    <div className={`bg-grid overflow-auto w-full h-[100vh] fixed`}>
+      <div className="" id="hover-container">
+        <main className="mx-auto h-full w-full min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0 text-[#e1e4eb]">
+          <div className="lg:flex h-full lg:justify-between lg:gap-4">
+            <Owner location={locationHash} handleItemClick={handleItemClick} language={language} />
+            <div className="flex flex-col h-full w-full gap-y-4">
+              <section className=" lg:pb-20 lg:py-24" id="about" title="About">
+                <About lang={language} />
+              </section>
+              <section id="experience" title="Experience">
+                <Experience lang={language} />
+              </section>
+              <section id="projects" title="Projects">
+                <Projects lang={language} />
+              </section>
+              <div className="pb-4 xl:pb-24">Footer</div>
+            </div>
+          </div>
+          <div className="z-10 fixed right-4 top-4 cursor-pointer">
+            <FontAwesomeIcon icon={faLanguage} className=" h-10" onClick={()=> toggleLanguage()} />
+          </div>
+        </main>
+      </div>
+    </div>
+  );
+}

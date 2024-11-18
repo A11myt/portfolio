@@ -1,0 +1,127 @@
+[
+  {
+    "Year": "08-2023",
+    "Name": "AstronvimV3",
+    "MadeAt": "take-e-way",
+    "Image": "",
+    "Description" : {
+      "de": "",
+      "en": ""
+    },
+    "BuiltWith": [
+      "Lua"
+    ],
+    "Link": "https://github.com/A11myt/AstronvimV3",
+    "frontPage": false
+  },
+  {
+    "Year": "05-2024",
+    "Name": " AstronvimV4",
+    "MadeAt": "Take-e-way",
+    "Image": "/images/Nvim.png",
+    "Description" : {
+      "de": "Eine personalisierte Konfiguration von Neovim, die auf dem Astronvim-Framework basiert und die Produktivität von Entwicklern steigern soll. Enthält benutzerdefinierte Plugins und Einstellungen, die auf moderne Arbeitsabläufe zugeschnitten sind.",
+      "en": "A personalized configuration of Neovim built on the Astronvim framework, designed to enhance developer productivity. Includes custom plugins and settings tailored for modern coding workflows."
+    },
+    "BuiltWith": [
+      "Lua"
+    ],
+    "Link": "https://github.com/A11myt/AstronvimV4",
+    "frontPage": true
+  },
+  {
+    "Year": "11-2024",
+    "Name": "DarkMyt",
+    "MadeAt": "Take-e-way",
+    "Image": "/images/DarkMyt.png",
+    "Description" : {
+      "de": "Ein dunkles Theme, das moderne Designprinzipien und Responsivität demonstriert und dabei hochgradig anpassbar für verschiedene Anwendungsfälle ist.",
+      "en": "A dark-theme for showcases modern design principles and responsiveness while being highly customizable for diverse use cases."
+    },
+    "BuiltWith": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind"
+    ],
+    "Link": "https://github.com/A11myt/DarkMyt",
+    "frontPage": true
+  },
+  {
+    "Year": "06-2024",
+    "Name": " Darknord",
+    "MadeAt": "take-e-way",
+    "Image": "/images/nvimColorscheme.png",
+    "Description" : {
+      "de": "Ein benutzerdefiniertes Neovim-Colorscheme, das in Lua geschrieben ist und von der beliebten Nord-Palette inspiriert wurde. Ziel ist es, eine optisch ansprechende und kohärente Arbeitsumgebung für Entwickler zu schaffen.",
+      "en": "A custom Neovim color scheme written in Lua, inspired by the popular Nord palette. Focused on providing a visually appealing and cohesive coding environment for developers."
+    },
+    "BuiltWith": [
+      "Lua"
+    ],
+    "Link": "https://github.com/A11myt/darknord.nvim",
+    "frontPage": true
+  },
+  {
+    "Year": "01-2022",
+    "Name": "E-Mail Signature",
+    "MadeAt": "Espresso International",
+    "Image": "/images/EmailSignature.png",
+    "Description" : {
+      "de": "Eine saubere und professionelle HTML-basierte E-Mail-Signaturvorlage. Sie gewährleistet Kompatibilität mit verschiedenen E-Mail-Clients und Geräten und sorgt für konsistentes Branding.",
+      "en": "A clean and professional HTML-based email signature template. It ensures compatibility across different email clients and devices, maintaining brand consistency."
+    },
+    "BuiltWith": [
+      "HTML"
+    ],
+    "Link": "https://github.com/A11myt/E-Mail-Signature",
+    "frontPage": true
+  },
+  {
+    "Year": "04-2024",
+    "Name": "Playground",
+    "MadeAt": "take-e-way",
+    "Image": "",
+    "Description" : {
+      "de": "",
+      "en": ""
+    },
+    "BuiltWith": [
+      "React",
+      "TypeScript",
+      "Tailwind",
+      "CSS"
+    ],
+    "Link": "https://github.com/A11myt/Playground",
+    "frontPage": false
+  },
+  {
+    "Year": "08-2023",
+    "Name": "Powershell Config",
+    "MadeAt": "take-e-way",
+    "Image": "",
+    "Description" : {
+      "de": "",
+      "en": ""
+    },
+    "BuiltWith": [
+      "PowerShell"
+    ],
+    "Link": "https://github.com/A11myt/PowershellConfig",
+    "frontPage": false
+  },
+  {
+    "Year": "08-2023",
+    "Name": "Terminal Config",
+    "MadeAt": "take-e-way",
+    "Image": "",
+    "Description" : {
+      "de": "",
+      "en": ""
+    },
+    "BuiltWith": [
+      "JSON"
+    ],
+    "Link": "https://github.com/A11myt/TerminalSetup",
+    "frontPage": false
+  }
+]

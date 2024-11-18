@@ -1,0 +1,64 @@
+
+[
+  {
+    "Company": "Take-e-way",
+    "Belonging": "2023 - Present",
+    "Description": { 
+      "de": "Entwicklung und Pflege einer modernen Unternehmensanwendung mit Fokus auf Benutzerfreundlichkeit und Skalierbarkeit. Implementierung neuer Features und Verbesserung bestehender Funktionen mit einem breiten Technologie-Stack.",
+      "en": "Development and maintenance of a modern enterprise application with a focus on user-friendliness and scalability. Implementation of new features and enhancement of existing functionalities using a diverse technology stack."
+    },
+    "Stack": [ "React", "Solid", "Tailwind", "C#", "PowerShell", "MySql"],
+    "EmployeeReferences": ""
+  },
+  {
+    "Company": "Espresso International",
+    "Belonging": "2021 - 2022",
+    "Description": { 
+      "de": "Entwicklung und Pflege von E-Commerce-Lösungen auf der Basis von Shopware 5. Die Umsetzung der Frontend- und Backend-Funktionalitäten erfolgte dabei mit besonderem Augenmerk auf Benutzerfreundlichkeit und Performance.",
+      "en": "Development and maintenance of e-commerce solutions based on Shopware 5. Implementation of frontend and backend functionalities with a strong focus on user experience and performance."
+    },
+    "Stack": ["PHP", "SASS", "HTML", "CSS", "Shopware 5"],
+    "EmployeeReferences": "/documents/EI-Arbeitszeugnis.pdf"
+  },
+  {
+    "Company": "GiB - Gesundheit in Bewegung",
+    "Belonging": "AUG. - OKT. 2020",
+    "Description": { 
+      "de": "Erarbeitung und Umsetzung von Landing Pages mit besonderem Fokus auf technische Konzeption und Nutzererlebnis. Die Anbindung an das Backend wurde mittels PHP realisiert, einschließlich Aufbau und Programmierung der zugehörigen Datenbank. Erstellung eines Anmeldesystems für Kurspläne zur effizienten und benutzerfreundlichen Registrierung.",
+      "en": "Development and implementation of landing pages with a focus on technical design and user experience. Backend integration was accomplished using PHP, including the setup and programming of the database. Creation of a registration system for course plans to facilitate efficient and user-friendly registration."
+    },
+    "Stack": ["PHP", "JavaScript", "HTML", "CSS"],
+    "EmployeeReferences": "/documents/GIB-Arbeitszeugnis.pdf"
+  },
+  {
+    "Company": "SGD",
+    "Belonging": "2021 - 2023",
+    "Description": { 
+      "de": "Weiterbildung zum Fachinformatiker mit Schwerpunkt Anwendungsentwicklung, fokussiert auf die Entwicklung und Implementierung moderner Softwarelösungen mit C#. Vermittlung fundierter Kenntnisse in objektorientierter Programmierung, Datenbankanbindung und Schnittstellenprogrammierung.",
+      "en": "Training as an IT specialist in application development, focused on developing and implementing modern software solutions using C#. Acquired in-depth knowledge in object-oriented programming, database integration, and API development."
+    },
+    "Stack": ["C#"],
+    "EmployeeReferences": "/documents/Ico-Arbeitszeugnis.pdf"
+  },
+  {
+    "Company": "HAW Hamburg",
+    "Belonging": "2018 - 2020",
+    "Description": { 
+      "de": "Entwicklung und Umsetzung zweier Arduino-Projekte: Ein interaktives 'Etch A Sketch' mit Koordinatensystem und eine Sound-Spektrum-Visualisierung mit Echtzeitanalyse auf einer LED-Matrix.",
+      "en": "Development and implementation of two Arduino projects: an interactive 'Etch A Sketch' with a coordinate system and a sound spectrum visualization with real-time analysis on an LED matrix."
+    },
+    "Stack": ["C++"],
+    "EmployeeReferences": ""
+  },
+  {
+    "Company": "Ico Moving Bytes (side job)",
+    "Belonging": "2016 - 2017",
+    "Description": { 
+      "de": "Die Tätigkeiten umfassten die Planung, Durchführung und Kontrolle von Projekten sowie die Überwachung und Optimierung von Prozessen zur Steigerung der Effizienz. Zudem gehörte die Erstellung von Berichten und Präsentationen zur Dokumentation der Projektergebnisse zu den Aufgaben. In enger Zusammenarbeit mit verschiedenen Abteilungen und externen Partnern wurden komplexe technische Herausforderungen analysiert und gelöst. Darüber hinaus wurden das Team bei technischen Fragen beraten und unterstützt.",
+      "en": "Responsibilities included planning, executing, and monitoring projects, as well as overseeing and optimizing processes to increase efficiency. Additionally, tasks involved creating reports and presentations to document project results. Complex technical challenges were analyzed and resolved in close collaboration with various departments and external partners, while also providing technical advice and support to the team."
+    },
+    "Stack": ["HTML", "CSS", "C++"],
+    "EmployeeReferences": "/documents/SGD-Zeugnis.pdf"
+  }
+]
+

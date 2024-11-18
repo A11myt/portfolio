@@ -1,0 +1,40 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  background: linear-gradient(135deg, #1f242b, #16222a);
+  background-attachment: fixed;  
+  margin: 0;
+  padding: 0;
+}
+
+.bg-grid {
+  background-image: linear-gradient(
+      to right,
+      rgba(155, 155, 155, 0.02) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(155, 155, 155, 0.02) 1px, transparent 1px);
+  background-size: 45px 45px; /* Adjust the size for finer or coarser grid */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Ensure it stays behind the content */
+}
+
+.content-container {
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto; /* Enable scrolling for the content */
+  position: relative;
+}
+
+.hover-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  transition: background 0.3s;
+}

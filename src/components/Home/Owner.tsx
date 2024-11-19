@@ -25,17 +25,18 @@ export default function Owner(props: {
         <h1 className="text-5xl md:text-6xl font-black md:leading-4 mb-4">Jason Johnson</h1>
         <h2 className="font-extrabold">Full Stack Developer</h2>
         <p className="pt-1 text-[#444955] text-sm font-bold">
-          {" "}
           Passion for Technology - Focus on Results
         </p>
       </div>
-      <div className="visible lg:hidden h-auto w-full z-10 fixed left-0 top-0  ">
+      <div className="visible lg:hidden h-auto w-full z-10 fixed left-0 top-0">
         <div className="p-5 font-bold backdrop-blur">
-          {windowLocation == "#about"
+          {windowLocation === "#about"
             ? labels[0]
-            : windowLocation == "#experience"
-              ? labels[1]
-              : windowLocation == "#projects" ?  labels[2] : ""}
+            : windowLocation === "#experience"
+            ? labels[1]
+            : windowLocation === "#projects"
+            ? labels[2]
+            : ""}
         </div>
       </div>
       <ul className="hidden lg:visible lg:pb-10 lg:gap-y-4 lg:flex lg:flex-col">
@@ -44,7 +45,7 @@ export default function Owner(props: {
           onClick={() => props.handleItemClick("#about")}
         >
           <hr
-            className={`duration-300  ${props.location == "#about" ? "w-10" : "w-4"}`}
+            className={`duration-300 ${props.location === "#about" ? "w-10" : "w-4"}`}
           />
           {labels[0]}
         </li>
@@ -53,7 +54,7 @@ export default function Owner(props: {
           onClick={() => props.handleItemClick("#experience")}
         >
           <hr
-            className={`duration-300 ${props.location == "#experience" ? "w-10" : "w-4"}`}
+            className={`duration-300 ${props.location === "#experience" ? "w-10" : "w-4"}`}
           />
           {labels[1]}
         </li>
@@ -62,7 +63,7 @@ export default function Owner(props: {
           onClick={() => props.handleItemClick("#projects")}
         >
           <hr
-            className={`duration-300 ${props.location == "#projects" ? "w-10" : "w-4"}`}
+            className={`duration-300 ${props.location === "#projects" ? "w-10" : "w-4"}`}
           />
           {labels[2]}
         </li>
@@ -70,13 +71,13 @@ export default function Owner(props: {
 
       <div className="flex gap-4">
         <a href="https://github.com/A11myt">
-          <FontAwesomeIcon icon={faGithub} className=" h-8" />
+          <FontAwesomeIcon icon={faGithub} className="h-8" />
         </a>
         <a href="https://www.linkedin.com/in/jason-johnson-8b305b82/">
-          <FontAwesomeIcon icon={faLinkedin} className=" h-8" />
+          <FontAwesomeIcon icon={faLinkedin} className="h-8" />
         </a>
         <a href="https://www.instagram.com/jason_jo94">
-          <FontAwesomeIcon icon={faInstagram} className=" h-8" />
+          <FontAwesomeIcon icon={faInstagram} className="h-8" />
         </a>
       </div>
     </div>

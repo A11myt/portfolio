@@ -8,17 +8,17 @@ import applyMouseGlow from "@/src/utils/MouseGlow";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLanguage } from "@fortawesome/free-solid-svg-icons";
 import { Language } from "@/src/types/Types";
-import { Metadata } from 'next';
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Home Page',
-  description: 'This is the home page of the portfolio website.',
-  keywords: 'portfolio, home, projects, experience, Odenwald',
+  title: "Home Page",
+  description: "This is the home page of the portfolio website.",
+  keywords: "portfolio, home, projects, experience, Odenwald",
 };
 
 export default function Home() {
   applyMouseGlow("hover-container");
-  const [locationHash, setLocationHash] = useState("#about");
+  const [locationHash, setLocationHash] = useState("about");
 
   const router = useRouter();
   const { lang } = router.query;

@@ -26,6 +26,8 @@ export default function Projects(props: { lang: Language }) {
             key={repo.Name}
             onMouseEnter={() => setHoveredProject(repo.Name)}
             onMouseLeave={() => setHoveredProject(null)}
+            onTouchStart={() => setHoveredProject(repo.Name)}
+            onTouchEnd={() => setHoveredProject(null)}
             className={`duration-300 ${
               hoveredJob && hoveredJob !== repo.Name ? "opacity-50" : ""
             }`}

@@ -13,6 +13,13 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Language } from "@/src/types/Types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'All Projects',
+  description: 'This page shows all the projects that Jason Johnson has worked on.',
+  keywords: 'projects, portfolio, Jason Johnson, Odenwald',
+};
 
 export default function Index() {
   const router = useRouter();

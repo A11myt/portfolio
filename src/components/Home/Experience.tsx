@@ -25,6 +25,8 @@ export default function Experience(props: { lang: Language }) {
           key={job.Company}
           onMouseEnter={() => setHoveredJob(job.Company)}
           onMouseLeave={() => setHoveredJob(null)}
+          onTouchStart={() => setHoveredJob(job.Company)}
+          onTouchEnd={() => setHoveredJob(null)}
           className={`duration-300 ${
             hoveredJob && hoveredJob !== job.Company ? "opacity-50" : ""
           }`}

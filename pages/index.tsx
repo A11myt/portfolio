@@ -8,6 +8,13 @@ import applyMouseGlow from "@/src/utils/MouseGlow";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLanguage } from "@fortawesome/free-solid-svg-icons";
 import { Language } from "@/src/types/Types";
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Home Page',
+  description: 'This is the home page of the portfolio website.',
+  keywords: 'portfolio, home, projects, experience, Odenwald',
+};
 
 export default function Home() {
   applyMouseGlow("hover-container");
@@ -22,6 +29,7 @@ export default function Home() {
       setLanguage(lang as Language);
     }
   }, [lang]);
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       const hash = window.location.hash;
@@ -47,25 +55,41 @@ export default function Home() {
   };
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const id = entry.target.getAttribute("id");
-            if (id && `#${id}` !== window.location.hash) {
-              window.history.replaceState(null, `#${id}`);
-              setLocationHash(`#${id}`);
+    const createObserver = () => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const id = entry.target.getAttribute("id");
+              if (id && `#${id}` !== window.location.hash) {
+                window.history.replaceState(null, `#${id}`);
+                setLocationHash(`#${id}`);
+              }
             }
-          }
-        });
-      },
-      { threshold: 0.5 },
-    );
+          });
+        },
+        { threshold: 0.5 },
+      );
 
-    const sections = document.querySelectorAll("section");
-    sections.forEach((section) => observer.observe(section));
+      const sections = document.querySelectorAll("section");
+      sections.forEach((section) => observer.observe(section));
 
-    return () => observer.disconnect();
+      return observer;
+    };
+
+    let observer = createObserver();
+
+    const handleResize = () => {
+      observer.disconnect();
+      observer = createObserver();
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   const toggleLanguage = () => {

@@ -6,6 +6,11 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+const labelStore = {
+  de: ["Über mich", "Erfahrung", "Projekte"],
+  en: ["About Me", "Experience", "Projects"],
+};
+
 export default function Owner(props: {
   location: string;
   language: string;
@@ -17,7 +22,7 @@ export default function Owner(props: {
     setWindowLocation(props.location);
   }, [props.location]);
 
-  const labels = props.language == "de" ? labelStore.de : labelStore.en;
+  const labels = props.language === "de" ? labelStore.de : labelStore.en;
 
   return (
     <div className="lg:sticky pt-8 md:pt-0 lg:top-0 lg:flex lg:max-h-screen lg:w-full lg:flex-col lg:justify-between lg:py-24">
@@ -83,8 +88,3 @@ export default function Owner(props: {
     </div>
   );
 }
-
-const labelStore = {
-  de: ["Über mich", "Erfahrung", "Projekte"],
-  en: ["About", "Experience", "Projects"],
-};

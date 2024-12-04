@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Owner from "@/src/components/Home/Owner";
 import About from "@/src/components/Home/About";
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   applyMouseGlow("hover-container");
-  const [locationHash, setLocationHash] = useState("about");
+  const [locationHash, setLocationHash] = useState("#about");
 
   const router = useRouter();
   const { lang } = router.query;
@@ -33,7 +33,7 @@ export default function Home() {
   useEffect(() => {
     if (typeof window !== "undefined") {
       const hash = window.location.hash;
-      setLocationHash(hash);
+      setLocationHash(hash || "#about");
       if (hash) {
         const element = document.getElementById(hash.replace("#", ""));
         if (element) {
@@ -49,7 +49,7 @@ export default function Home() {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
       setTimeout(() => {
-        window.history.replaceState(null, hash);
+        window.history.replaceState(null, "", hash);
       }, 300);
     }
   };
@@ -62,13 +62,13 @@ export default function Home() {
             if (entry.isIntersecting) {
               const id = entry.target.getAttribute("id");
               if (id && `#${id}` !== window.location.hash) {
-                window.history.replaceState(null, `#${id}`);
+                window.history.replaceState(null, "", `#${id}`);
                 setLocationHash(`#${id}`);
               }
             }
           });
         },
-        { threshold: 0.5 },
+        // { threshold: 0.5 }
       );
 
       const sections = document.querySelectorAll("section");

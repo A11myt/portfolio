@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Owner from "@/src/components/Home/Owner";
 import About from "@/src/components/Home/About";
@@ -33,7 +33,7 @@ export default function Home() {
   useEffect(() => {
     if (typeof window !== "undefined") {
       const hash = window.location.hash;
-      setLocationHash(hash || "#about");
+      setLocationHash(hash);
       if (hash) {
         const element = document.getElementById(hash.replace("#", ""));
         if (element) {
@@ -49,48 +49,51 @@ export default function Home() {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
       setTimeout(() => {
-        window.history.replaceState(null, "", hash);
+        window.history.replaceState(null, hash);
       }, 300);
     }
   };
 
-  useEffect(() => {
-    const createObserver = () => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const id = entry.target.getAttribute("id");
-              if (id && `#${id}` !== window.location.hash) {
-                window.history.replaceState(null, "", `#${id}`);
-                setLocationHash(`#${id}`);
-              }
+useEffect(() => {
+  const createObserver = () => {
+    const thresholdValue = window.innerWidth <= 768 ? 0 : 0.5; // No threshold on mobile
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute("id");
+            if (id && `#${id}` !== window.location.hash) {
+              window.history.replaceState(null, `#${id}`);
+              setLocationHash(`#${id}`);
             }
-          });
-        },
-        // { threshold: 0.5 }
-      );
+          }
+        });
+      },
+      { threshold: thresholdValue },
+    );
 
-      const sections = document.querySelectorAll("section");
-      sections.forEach((section) => observer.observe(section));
+    const sections = document.querySelectorAll("section");
+    sections.forEach((section) => observer.observe(section));
 
-      return observer;
-    };
+    return observer;
+  };
 
-    let observer = createObserver();
+  let observer = createObserver();
 
-    const handleResize = () => {
-      observer.disconnect();
-      observer = createObserver();
-    };
+  const handleResize = () => {
+    observer.disconnect();
+    observer = createObserver();
+  };
 
-    window.addEventListener("resize", handleResize);
+  window.addEventListener("resize", handleResize);
 
-    return () => {
-      observer.disconnect();
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  return () => {
+    observer.disconnect();
+    window.removeEventListener("resize", handleResize);
+  };
+}, []);
+
 
   const toggleLanguage = () => {
     setLanguage(language === "de" ? "en" : "de");
@@ -98,6 +101,7 @@ export default function Home() {
 
   return (
     <div className={`bg-grid overflow-auto w-full h-[100vh] fixed`}>
+      <metadata />
       <div className="" id="hover-container">
         <main className="mx-auto h-full w-full min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0 text-[#e1e4eb]">
           <div className="lg:flex h-full lg:justify-between lg:gap-4">

@@ -3,7 +3,7 @@ import { GithubProject } from "@/src/types/Types";
 import { useState, useEffect, useMemo } from "react";
 import data from "../../data/Projects.json";
 import Link from "next/link";
-import  applyMouseGlow  from "@/src/utils/MouseGlow";
+import applyMouseGlow from "@/src/utils/MouseGlow";
 import { DateConverter } from "@/src/utils/DateConverter";
 import {
   faArrowLeft,
@@ -14,6 +14,7 @@ import {
 import { Language } from "@/src/types/Types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Metadata } from 'next';
+import Head from "next/head";
 
 export const metadata: Metadata = {
   title: 'All Projects',
@@ -67,6 +68,12 @@ export default function Index() {
   //add backdrop-blur but hold the splitting line
   return (
     <div className={`bg-grid `} style={{ width: "100%", height: "100vh" }}>
+      <Head>
+      <title>All Projects</title>
+        <meta name="description" content="This page shows all the projects that Jason Johnson has worked on." />
+        <meta name="keywords" content="projects, portfolio, Jason Johnson, Odenwald" />
+        <meta property="og:title" content="All Projects" key="title" />
+      </Head>
       <div className="" id="hover-container">
         <div className="mx-auto w-full min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0 text-[#e1e4eb]">
           <div className="flex flex-col pt-2 space-y-6">

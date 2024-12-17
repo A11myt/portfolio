@@ -24,8 +24,9 @@ export function ProjectCard(props: { repo: GithubProject; lang: Language }) {
           src={props.repo.Image}
           alt={props.repo.Name}
           className="w-full self-center"
-          width={500}
-          height={500}
+          loading="lazy"
+          width={300}
+          height={300}
         />
       </div>
       <div className="px-2 h-full gap-1 flex flex-col justify-between">

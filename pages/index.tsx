@@ -8,13 +8,8 @@ import applyMouseGlow from "@/src/utils/MouseGlow";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLanguage } from "@fortawesome/free-solid-svg-icons";
 import { Language } from "@/src/types/Types";
-import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Home Page",
-  description: "This is the home page of the portfolio website.",
-  keywords: "portfolio, home, projects, experience, Odenwald",
-};
+
 
 export default function Home() {
   applyMouseGlow("hover-container");
@@ -101,7 +96,6 @@ useEffect(() => {
 
   return (
     <div className={`bg-grid overflow-auto w-full h-[100vh] fixed`}>
-      <metadata />
       <div className="" id="hover-container">
         <main className="mx-auto h-full w-full min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0 text-[#e1e4eb]">
           <div className="lg:flex h-full lg:justify-between lg:gap-4">

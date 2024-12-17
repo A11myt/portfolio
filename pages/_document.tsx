@@ -1,5 +1,4 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import { Metadata } from "next";
 
 export default function Document() {
   return (

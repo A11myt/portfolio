@@ -8,7 +8,7 @@ import applyMouseGlow from "@/src/utils/MouseGlow";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLanguage } from "@fortawesome/free-solid-svg-icons";
 import { Language } from "@/src/types/Types";
-
+import Head from "next/head";
 
 
 export default function Home() {
@@ -96,6 +96,11 @@ useEffect(() => {
 
   return (
     <div className={`bg-grid overflow-auto w-full h-[100vh] fixed`}>
+            <Head>
+            <title>Jason Johnson - Portfolio</title>
+              <meta name="description" content="Jason Johnson's portfolio website" />
+              <meta name="keywords" content="Jason Johnson, Portfolio, Web Developer" />        
+              </Head>
       <div className="" id="hover-container">
         <main className="mx-auto h-full w-full min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0 text-[#e1e4eb]">
           <div className="lg:flex h-full lg:justify-between lg:gap-4">

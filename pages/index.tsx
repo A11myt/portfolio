@@ -49,45 +49,45 @@ export default function Home() {
     }
   };
 
-useEffect(() => {
-  const createObserver = () => {
-    const thresholdValue = window.innerWidth <= 768 ? 0 : 0.5; // No threshold on mobile
+  useEffect(() => {
+    const createObserver = () => {
+      const thresholdValue = window.innerWidth <= 768 ? 0 : 0.5; // No threshold on mobile
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const id = entry.target.getAttribute("id");
-            if (id && `#${id}` !== window.location.hash) {
-              window.history.replaceState(null, `#${id}`);
-              setLocationHash(`#${id}`);
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const id = entry.target.getAttribute("id");
+              if (id && `#${id}` !== window.location.hash) {
+                window.history.replaceState(null, `#${id}`);
+                setLocationHash(`#${id}`);
+              }
             }
-          }
-        });
-      },
-      { threshold: thresholdValue },
-    );
+          });
+        },
+        { threshold: thresholdValue },
+      );
 
-    const sections = document.querySelectorAll("section");
-    sections.forEach((section) => observer.observe(section));
+      const sections = document.querySelectorAll("section");
+      sections.forEach((section) => observer.observe(section));
 
-    return observer;
-  };
+      return observer;
+    };
 
-  let observer = createObserver();
+    let observer = createObserver();
 
-  const handleResize = () => {
-    observer.disconnect();
-    observer = createObserver();
-  };
+    const handleResize = () => {
+      observer.disconnect();
+      observer = createObserver();
+    };
 
-  window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", handleResize);
 
-  return () => {
-    observer.disconnect();
-    window.removeEventListener("resize", handleResize);
-  };
-}, []);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
 
   const toggleLanguage = () => {
@@ -96,11 +96,19 @@ useEffect(() => {
 
   return (
     <div className={`bg-grid overflow-auto w-full h-[100vh] fixed`}>
-            <Head>
-            <title>Jason Johnson - Portfolio</title>
-              <meta name="description" content="Jason Johnson's portfolio website" />
-              <meta name="keywords" content="Jason Johnson, Portfolio, Web Developer" />        
-              </Head>
+      <Head>
+        <title>Jason Johnson - Portfolio</title>
+        <meta name="description" content="Jason Johnson's portfolio website" />
+        <meta name="keywords" content="Jason Johnson, Portfolio, Web Developer" />
+
+        <meta property="og:title" content="Jason Johnson - Portfolio" />
+        <meta property="og:description" content="Jason Johnson's portfolio website" />
+        <meta property="og:image" content="/opengraph-image.png" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
+      </Head>
       <div className="" id="hover-container">
         <main className="mx-auto h-full w-full min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0 text-[#e1e4eb]">
           <div className="lg:flex h-full lg:justify-between lg:gap-4">

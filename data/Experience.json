@@ -38,7 +38,7 @@
       "en": "Training as an IT specialist in application development, focused on developing and implementing modern software solutions using C#. Acquired in-depth knowledge in object-oriented programming, database integration, and API development."
     },
     "Stack": ["C#"],
-    "EmployeeReferences": "/documents/Ico-Arbeitszeugnis.pdf"
+    "EmployeeReferences": "/documents/SGD-Zeugnis.pdf"
   },
   {
     "Company": "HAW Hamburg",
@@ -58,7 +58,7 @@
       "en": "Responsibilities included planning, executing, and monitoring projects, as well as overseeing and optimizing processes to increase efficiency. Additionally, tasks involved creating reports and presentations to document project results. Complex technical challenges were analyzed and resolved in close collaboration with various departments and external partners, while also providing technical advice and support to the team."
     },
     "Stack": ["HTML", "CSS", "C++"],
-    "EmployeeReferences": "/documents/SGD-Zeugnis.pdf"
+    "EmployeeReferences": "/documents/Ico-Arbeitszeugnis.pdf"
   }
 ]
 

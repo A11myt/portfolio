@@ -9,24 +9,24 @@ export const metadata: Metadata = {
   keywords: 'projects, portfolio, Jason Johnson, Odenwald',
 };
 
-export type ChapterBlock =
+type ChapterBlock =
   | {
-      type: 'text';
-      text: string;
-    }
+    type: 'text';
+    text: string;
+  }
   | {
-      type: 'exercise';
-      text: string;
-      content: string;
-    };
+    type: 'exercise';
+    text: string;
+    content: string;
+  };
 
-export type Chapter = {
+type Chapter = {
   chapter: string;
   title: string;
   content: ChapterBlock[];
 };
 
-export type Manifest = {
+type Manifest = {
   version: string;
   name: string;
   description: string;
@@ -34,7 +34,7 @@ export type Manifest = {
 };
 
 export default function Index() {
-  const [manifest, setManifest] = useState<Manifest | null>(null);
+  const [manifest] = useState<Manifest | null>(null);
   // const [language, setLanguage] = useState<"de" | "en">("de");
 
   // const [language, setLanguage] = useState<string | undefined>(undefined);
@@ -44,30 +44,34 @@ export default function Index() {
   //   }
   // }, [lang]);
 
-  useEffect(() => {
-    import('../../data/manifest.json').then((mod) => setManifest(mod.default[0] as Manifest));
-  }, []);
+  // useEffect(() => {
+  //   import('../../data/manifest.json').then((mod) => setManifest(mod.default[0] as Manifest));
+  // }, []);
 
   if (!manifest) return <div>Lädt...</div>;
 
   return (
-    <div style={{ fontFamily: 'sans-serif', margin: '2em' }}>
-      <h1>{manifest.name}</h1>
-      <p>{manifest.description}</p>
-      {manifest.content.map((chapter) => (
-        <div key={chapter.chapter}>
-          <h2>{chapter.title}</h2>
-          {Array.isArray(chapter.content) &&
-            chapter.content.map((item, idx) => {
-              if (item.type === 'heading') return <h3 key={idx}>{item.text}</h3>;
-              if (item.type === 'paragraph') return <p key={idx}>{item.text}</p>;
-              if (item.type === 'quote') return <blockquote key={idx}>{item.text}</blockquote>;
-              return null;
-            })}
-        </div>
-      ))}
-    </div>
-  );
+  <div>
+
+  </div> )
+
+    // <div style={{ fontFamily: 'sans-serif', margin: '2em' }}>
+    //   <h1>{manifest.name}</h1>
+    //   <p>{manifest.description}</p>
+      {/* {manifest.content.map((chapter) => ( */}
+     {/*   <div key={chapter.chapter}> */}
+      {/*     <h2>{chapter.title}</h2> */}
+      {/*     {Array.isArray(chapter.content) && */}
+      {/*       chapter.content.map((item, idx) => { */}
+      {/*         if (item.type === 'heading') return <h3 key={idx}>{item.text}</h3>; */}
+      {/*         if (item.type === 'paragraph') return <p key={idx}>{item.text}</p>; */}
+      {/*         if (item.type === 'quote') return <blockquote key={idx}>{item.text}</blockquote>; */}
+      {/*         return null; */}
+      {/*       })} */}
+      {/*   </div> */}
+      {/* ))} */}
+    // </div>
+  // );
 }
 
 // const labelStore = {

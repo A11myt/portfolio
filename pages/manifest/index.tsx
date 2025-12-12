@@ -54,7 +54,7 @@ export default function Index() {
     <div style={{ fontFamily: 'sans-serif', margin: '2em' }}>
       <h1>{manifest.name}</h1>
       <p>{manifest.description}</p>
-      {manifest.content.de.map((chapter) => (
+      {manifest.content.map((chapter) => (
         <div key={chapter.chapter}>
           <h2>{chapter.title}</h2>
           {Array.isArray(chapter.content) &&

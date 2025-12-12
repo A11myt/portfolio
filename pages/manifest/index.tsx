@@ -9,27 +9,28 @@ export const metadata: Metadata = {
   keywords: 'projects, portfolio, Jason Johnson, Odenwald',
 };
 
-type ManifestItem = {
-  type: 'heading' | 'paragraph' | 'quote';
-  text: string;
-};
+export type ChapterBlock =
+  | {
+      type: 'text';
+      text: string;
+    }
+  | {
+      type: 'exercise';
+      text: string;
+      content: string;
+    };
 
-type ManifestChapter = {
+export type Chapter = {
   chapter: string;
   title: string;
-  content: ManifestItem[];
+  content: ChapterBlock[];
 };
 
-type ManifestContent = {
-  de: ManifestChapter[];
-  en: ManifestChapter[];
-};
-
-type Manifest = {
+export type Manifest = {
   version: string;
   name: string;
   description: string;
-  content: ManifestContent;
+  content: Chapter[]; // <- wichtig: Array, keine { de, en } mehr
 };
 
 export default function Index() {
@@ -44,8 +45,7 @@ export default function Index() {
   // }, [lang]);
 
   useEffect(() => {
-    import("../../data/manifest.json")
-      .then((mod) => setManifest(mod.default[0]));
+    import('../../data/manifest.json').then((mod) => setManifest(mod.default[0] as Manifest));
   }, []);
 
   if (!manifest) return <div>Lädt...</div>;
@@ -59,9 +59,9 @@ export default function Index() {
           <h2>{chapter.title}</h2>
           {Array.isArray(chapter.content) &&
             chapter.content.map((item, idx) => {
-              if (item.type === "heading") return <h3 key={idx}>{item.text}</h3>;
-              if (item.type === "paragraph") return <p key={idx}>{item.text}</p>;
-              if (item.type === "quote") return <blockquote key={idx}>{item.text}</blockquote>;
+              if (item.type === 'heading') return <h3 key={idx}>{item.text}</h3>;
+              if (item.type === 'paragraph') return <p key={idx}>{item.text}</p>;
+              if (item.type === 'quote') return <blockquote key={idx}>{item.text}</blockquote>;
               return null;
             })}
         </div>

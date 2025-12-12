@@ -1,0 +1,122 @@
+[
+  {
+    "version": "1.0",
+    "name": "Arch Ricing – Klarheit durch Kontrolle",
+    "description": "Ein Manifest über bewusste Gestaltung, digitalen Minimalismus und die Kunst, Systeme zu verstehen.",
+    "content": [
+      {
+        "chapter": "1",
+        "title": "1. Die Leere",
+        "content": [
+          {
+            "type": "heading",
+            "text": "1. Die Leere"
+          },
+          {
+            "type": "paragraph",
+            "text": "Ein unkonfiguriertes System ist nicht leer – es ist offen.Es ist kein Mangel, sondern ein Anfang: eine Einladung zur Entscheidung."
+          },
+          {
+            "type": "paragraph",
+            "text": "Wo andere ein Chaos sehen, sehen wir eine Struktur, die noch nicht benannt wurde.Arch Linux beginnt mit fast nichts – und gerade deshalb beginnt es mit allem."
+          },
+          {
+            "type": "paragraph",
+            "text": "Denn das, was fehlt, ist nicht verloren. Es ist Raum. Raum für deine Entscheidung, deine Gestaltung, deine Verantwortung."
+          },
+          {
+            "type": "paragraph",
+            "text": "Die Leere ist kein Fehler. Sie ist ein Versprechen: dass du entscheidest, was notwendig ist."
+          },
+          {
+            "type": "quote",
+            "text": "Dies ist ein Zitat."
+          },
+          {
+            "type": "paragraph",
+            "text": "Weitere Zeile."
+          },
+          {
+            "type": "list",
+            "text": "Und noch eine Zeile."
+          }
+        ]
+      },
+      {
+        "chapter": "2",
+        "title": "2. Werkzeuge und Wurzeln",
+        "content": [
+          {
+            "type": "heading",
+            "text": "2. Werkzeuge und Wurzeln"
+          },
+          {
+            "type": "paragraph",
+            "text": "Ricing ist keine Dekoration. Es ist Struktur. Wenn du dein System konfigurierst, veränderst du nicht nur, wie es aussieht – du entscheidest, wie du arbeitest.Jede Taste, jeder Shortcut, jedes Script ist eine Antwort auf die Frage: Wie denke ich? Wie arbeite ich? Was brauche ich wirklich?"
+          },
+          {
+            "type": "paragraph",
+            "text": "Nicht das, was die Distribution vorgibt, ist wichtig. Sondern das, was du brauchst. Deshalb beginnt Ricing nicht mit Themes – sondern mit Fragen:"
+          },
+          {
+            "type": "list",
+            "text": "Was ist mein Workflow?\n Was lenkt mich ab?\n Was brauche ich wirklich?"
+          },
+          {
+            "type": "paragraph",
+            "text": "Wer seine Werkzeuge kennt, kennt sich selbst.\nEin Rice ist kein Skin – es ist ein Spiegel."
+          }
+        ]
+      },
+      {
+        "chapter": "3",
+        "title": "3. Disziplin als Grundlage",
+        "content": {
+          "de": [
+            {
+              "type": "heading",
+              "text": "3. Disziplin als Grundlage",
+              "content": ""
+            },
+            {
+              "chapter": "4",
+              "title": "4. Gestaltung durch Begrenzung"
+            },
+            {
+              "chapter": "5",
+              "title": "5. Sprache und Oberfläche"
+            },
+            {
+              "chapter": "6",
+              "title": "6. Pragmatismus und Brüche"
+            },
+            {
+              "chapter": "7",
+              "title": "7. Gemeinschaft und Weitergabe"
+            },
+            {
+              "chapter": "8",
+              "title": "8. Haltung und Ausblick"
+            },
+            {
+              "chapter": "9",
+              "title": "Anhang: Ricing the Mind – Klarheit durch Lebensgestaltung"
+            }
+          ],
+          "content": {
+            "en": [
+              {
+                "chapter": "1",
+                "title": "Introduction to JavaScript",
+                "content": ""
+              },
+              {
+                "chapter": "2",
+                "title": "Advanced JavaScript Concepts",
+                "content": ""
+              }
+            ]
+          }
+        }
+      }
+    ]

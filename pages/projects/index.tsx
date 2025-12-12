@@ -1,20 +1,15 @@
-import { useRouter } from "next/router";
-import { GithubProject } from "@/src/types/Types";
-import { useState, useEffect, useMemo } from "react";
-import data from "../../data/Projects.json";
-import Link from "next/link";
-import applyMouseGlow from "@/src/utils/MouseGlow";
-import { DateConverter } from "@/src/utils/DateConverter";
-import {
-  faArrowLeft,
-  faLanguage,
-  faArrowDownWideShort,
-  faArrowUpWideShort,
-} from "@fortawesome/free-solid-svg-icons";
-import { Language } from "@/src/types/Types";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useRouter } from 'next/router';
+import { GithubProject } from '@/src/types/Types';
+import { useState, useEffect, useMemo } from 'react';
+import data from '../../data/Projects.json';
+import Link from 'next/link';
+import applyMouseGlow from '@/src/utils/MouseGlow';
+import { DateConverter } from '@/src/utils/DateConverter';
+import { faArrowLeft, faLanguage, faArrowDownWideShort, faArrowUpWideShort, } from '@fortawesome/free-solid-svg-icons';
+import { Language } from '@/src/types/Types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Metadata } from 'next';
-import Head from "next/head";
+import Head from 'next/head';
 
 export const metadata: Metadata = {
   title: 'All Projects',
@@ -26,7 +21,7 @@ export default function Index() {
   const router = useRouter();
   const { lang } = router.query;
   const [language, setLanguage] = useState<string | undefined>(undefined);
-  const labels = language == "de" ? labelStore.de : labelStore.en;
+  const labels = language == 'de' ? labelStore.de : labelStore.en;
   useEffect(() => {
     if (lang) {
       setLanguage(lang as Language);
@@ -34,17 +29,17 @@ export default function Index() {
   }, [lang]);
 
   const [repos, setRepos] = useState<GithubProject[]>([]);
-  const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
+  const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
 
-  applyMouseGlow("hover-container");
+  applyMouseGlow('hover-container');
   useEffect(() => {
     const typedData: GithubProject[] = data;
     setRepos(typedData);
   }, []);
 
   const parseDate = (dateStr: string) => {
-    const [month, year] = dateStr.split("-");
-    const monthIndex = new Date(Date.parse(month + " 1, 2021")).getMonth();
+    const [month, year] = dateStr.split('-');
+    const monthIndex = new Date(Date.parse(month + ' 1, 2021')).getMonth();
     return new Date(parseInt(year), monthIndex);
   };
 
@@ -52,25 +47,28 @@ export default function Index() {
     return [...repos].sort((a, b) => {
       const dateA = parseDate(a.Year);
       const dateB = parseDate(b.Year);
-      return sortOrder === "asc"
+      return sortOrder === 'asc'
         ? dateA.getTime() - dateB.getTime()
         : dateB.getTime() - dateA.getTime();
     });
   }, [repos, sortOrder]);
 
   const toggleLanguage = () => {
-    setLanguage(language === "de" ? "en" : "de");
+    setLanguage(language === 'de' ? 'en' : 'de');
   };
 
   const toggleSortOrder = () => {
-    setSortOrder(sortOrder === "asc" ? "desc" : "asc");
+    setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
   };
   //add backdrop-blur but hold the splitting line
   return (
-    <div className={`bg-grid `} style={{ width: "100%", height: "100vh" }}>
+    <div className={`bg-grid `} style={{ width: '100%', height: '100vh' }}>
       <Head>
-      <title>All Projects</title>
-        <meta name="description" content="This page shows all the projects that Jason Johnson has worked on." />
+        <title>All Projects</title>
+        <meta
+          name="description"
+          content="This page shows all the projects that Jason Johnson has worked on."
+        />
         <meta name="keywords" content="projects, portfolio, Jason Johnson, Odenwald" />
         <meta property="og:title" content="All Projects" key="title" />
       </Head>
@@ -81,25 +79,16 @@ export default function Index() {
               <FontAwesomeIcon icon={faArrowLeft} className="group w-5 hover" />
               {labels[0]}
             </Link>
-            <h2 className="text-5xl h-auto font-extrabold leading-4">
-              {labels[1]}
-            </h2>
+            <h2 className="text-5xl h-auto font-extrabold leading-4">{labels[1]}</h2>
             <div className="overflow-x-auto pt-6 w-full">
               <table className="w-full border-collapse">
                 <thead>
                   <tr className="font-bold text-left border-b border-[#e1e4eb] backdrop-blur bg-[#1f242b]/50">
-                    <th
-                      className="flex col items-center px-3 py-4 gap-2"
-                      onClick={toggleSortOrder}
-                    >
+                    <th className="flex col items-center px-3 py-4 gap-2" onClick={toggleSortOrder}>
                       {labels[2]}
                       <FontAwesomeIcon
-                        icon={
-                          sortOrder == "asc"
-                            ? faArrowUpWideShort
-                            : faArrowDownWideShort
-                        }
-                      />{" "}
+                        icon={sortOrder == 'asc' ? faArrowUpWideShort : faArrowDownWideShort}
+                      />{' '}
                     </th>
                     <th className="px-3 py-4">{labels[3]}</th>
                     <th className="px-3 py-4">{labels[4]}</th>
@@ -113,9 +102,7 @@ export default function Index() {
                       key={i}
                       className="border-b border-[#e1e4eb]/20 even:bg-[#1f242b]/50 odd:bg-[#e1e4eb]/5 "
                     >
-                      <td className="px-4 py-4">
-                        {DateConverter("de", repo.Year)}
-                      </td>
+                      <td className="px-4 py-4">{DateConverter('de', repo.Year)}</td>
                       <td className="px-4 py-2">{repo.Name}</td>
                       <td className="px-4 py-2">{repo.MadeAt}</td>
                       <td className="px-4 py-2">{repo.BuiltWith}</td>
@@ -150,21 +137,13 @@ export default function Index() {
 
 const labelStore = {
   de: [
-    "Zurück zu Jason Johnson",
-    "Alle Projekte",
-    "Jahr",
-    "Projekt",
-    "Gemacht bei",
-    "Gebaut mit",
-    "Link",
+    'Zurück zu Jason Johnson',
+    'Alle Projekte',
+    'Jahr',
+    'Projekt',
+    'Gemacht bei',
+    'Gebaut mit',
+    'Link',
   ],
-  en: [
-    "Back to Jason Johnson",
-    "All Projects",
-    "Year",
-    "Project",
-    "Made at",
-    "Built with",
-    "Link",
-  ],
+  en: ['Back to Jason Johnson', 'All Projects', 'Year', 'Project', 'Made at', 'Built with', 'Link'],
 };
